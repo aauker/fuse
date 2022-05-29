@@ -288,7 +288,7 @@ type HandleReadAller interface {
 }
 
 type HandleReadDirAller interface {
-	ReadDirAll(ctx context.Context) ([]fuse.Dirent, error)
+	ReadDirAll(ctx context.Context, uid uint32) ([]fuse.Dirent, error)
 }
 
 type HandleReader interface {
@@ -1375,7 +1375,7 @@ func (c *Server) handleRequest(ctx context.Context, node Node, snode *serveNode,
 				}
 
 				if shandle.readData == nil {
-					dirs, err := h.ReadDirAll(ctx)
+					dirs, err := h.ReadDirAll(ctx, r.Uid)
 					if err != nil {
 						return err
 					}
