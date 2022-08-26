@@ -9,11 +9,11 @@ import (
 	"syscall"
 	"testing"
 
-	"bazil.org/fuse"
-	"bazil.org/fuse/fs"
-	"bazil.org/fuse/fs/fstestutil"
-	"bazil.org/fuse/fs/fstestutil/spawntest"
-	"bazil.org/fuse/fs/fstestutil/spawntest/httpjson"
+	"github.com/aauker/fuse"
+	"github.com/aauker/fuse/fs"
+	"github.com/aauker/fuse/fs/fstestutil"
+	"github.com/aauker/fuse/fs/fstestutil/spawntest"
+	"github.com/aauker/fuse/fs/fstestutil/spawntest/httpjson"
 )
 
 type benchConfig struct {

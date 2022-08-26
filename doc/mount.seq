@@ -1,7 +1,7 @@
 seqdiag {
   // seqdiag -T svg -o doc/mount.svg doc/mount.seq
   app;
-  fuse [label="bazil.org/fuse"];
+  fuse [label="github.com/aauker/fuse"];
   fusermount;
   kernel;
   mounts;

@@ -5,8 +5,8 @@ import (
 	"sync"
 	"time"
 
-	"bazil.org/fuse"
-	"bazil.org/fuse/fs"
+	"github.com/aauker/fuse"
+	"github.com/aauker/fuse/fs"
 )
 
 // ReleaseWaiter notes whether a FUSE Release call has been seen.
