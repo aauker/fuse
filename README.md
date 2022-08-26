@@ -1,8 +1,10 @@
 github.com/aauker/fuse -- Filesystems in Go
 ===================================
 
-`github.com/aauker/fuse` is a Go library for writing FUSE userspace
+`github.com/aauker/fuse` is a Fork of the Go library for writing FUSE userspace
 filesystems.
+
+The small change this package brings is passing the UID to the Lookup and ReadDirAll functions to enable access control to tree-level directories.
 
 It is a from-scratch implementation of the kernel-userspace
 communication protocol, and does not use the C library from the
