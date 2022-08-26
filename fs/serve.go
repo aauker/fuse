@@ -169,7 +169,7 @@ type NodeStringLookuper interface {
 	// the directory, Lookup should return ENOENT.
 	//
 	// Lookup need not to handle the names "." and "..".
-	Lookup(ctx context.Context, name string) (Node, error)
+	Lookup(ctx context.Context, name string, uid uint32) (Node, error)
 }
 
 type NodeRequestLookuper interface {
@@ -1182,7 +1182,7 @@ func (c *Server) handleRequest(ctx context.Context, node Node, snode *serveNode,
 		s := &fuse.LookupResponse{}
 		initLookupResponse(s)
 		if n, ok := node.(NodeStringLookuper); ok {
-			n2, err = n.Lookup(ctx, r.Name)
+			n2, err = n.Lookup(ctx, r.Name, r.Uid)
 		} else if n, ok := node.(NodeRequestLookuper); ok {
 			n2, err = n.Lookup(ctx, r, s)
 		} else {
